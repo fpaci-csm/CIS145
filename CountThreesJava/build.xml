@@ -1,0 +1,31 @@
+<!-- 
+Basic build.xml
+Uses current working director as source directory
+Creates ./build directory for class and jar files
+-->
+
+<project name="CountThrees" default="compile" basedir=".">
+    <property name="src" value="."/>
+    <property name="build" value="build"/>
+    
+    <target name="init">
+        <mkdir dir="${build}"/>
+    </target>
+    
+    <target name="compile" depends="init">
+        <javac srcdir="${src}" destdir="${build}"/>
+    </target>
+    
+    <target name="jar">
+        <mkdir dir="${build}"/>
+        <jar destfile="${build}/CountThrees.jar" basedir="${build}">
+            <manifest>
+                <attribute name="Main-Class" value="CountThrees"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run">
+        <java jar="${build}/CountThrees.jar" fork="true"/>
+    </target>
+</project>
