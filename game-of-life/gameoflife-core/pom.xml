@@ -17,7 +17,7 @@
       <plugin>
         <groupId>org.easyb</groupId>
         <artifactId>maven-easyb-plugin</artifactId>
-        <version>1.4</version>
+        <version>0.9.8</version>
       </plugin>
     </plugins>
   </build>
